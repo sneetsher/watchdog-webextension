@@ -1,18 +1,18 @@
 {
 
-  "description": "Adds a solid red border to all webpages matching mozilla.org. See https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Examples#borderify",
+  "description": "Watchdog for special centents",
   "manifest_version": 2,
-  "name": "Borderify",
+  "name": "Watchdog",
   "version": "1.0",
-  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/borderify",
+  "homepage_url": "https://github.com/sneetsher/watchdog-webextension",
   "icons": {
     "48": "icons/border-48.png"
   },
 
   "content_scripts": [
     {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["borderify.js"]
+      "matches": ["*://*.com/*"],
+      "js": ["watchdog-content.js"]
     }
   ]
 
