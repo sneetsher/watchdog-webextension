@@ -4,7 +4,24 @@ console.log(browser.extension.getURL(""));
 //console.log(browser.runtime.getBrowserInfo());
 
 console.log("put notice...");
-document.body.style.borderLeft = "10px solid red";
+
+function onError(error) {
+  console.log(`Error: ${error}`);
+}
+
+function onGot(item) {
+  let color = "blue";
+  if (item.color) {
+    color = item.color;
+  }
+  document.body.style.borderLeft = "10px solid " + color;
+}
+
+let getting = browser.storage.sync.get("color");
+getting.then(onGot, onError);
+
+//document.body.style.borderLeft = "10px solid red";
+
 let p = document.createElement("p");
 p.setAttribute("id", "plugin-notice");
 p.textContent = "Notice ........... OK";

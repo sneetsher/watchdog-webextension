@@ -16,9 +16,14 @@
       "js": ["content/watchdog_content.js"]
     }
   ],
+  
+  "options_ui": {
+    "page": "options/watchdog_options.html"
+  },
 
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
 
   "browser_action": {
