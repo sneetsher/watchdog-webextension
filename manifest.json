@@ -6,14 +6,37 @@
   "version": "1.0",
   "homepage_url": "https://github.com/sneetsher/watchdog-webextension",
   "icons": {
-    "48": "icons/border-48.png"
+    "48": "icons/dog.svg",
+    "96": "icons/dog.svg"
   },
 
   "content_scripts": [
     {
-      "matches": ["*://*.com/*"],
-      "js": ["watchdog-content.js"]
+      "matches": ["*://*/"],
+      "js": ["content/watchdog_content.js"]
     }
-  ]
+  ],
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/dog.svg",
+    "default_title": "Watchdog",
+    "default_popup": "popup/watchdog_popup.html"
+  },
+
+  "web_accessible_resources": [
+    "images/frog.jpg",
+    "images/turtle.jpg",
+    "images/snake.jpg"
+  ],
+  
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "watchdog@sneetsher"
+    }
+  }
 
 }
